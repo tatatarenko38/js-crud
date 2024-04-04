@@ -15,7 +15,7 @@ class User {
     this.id = new Date().getTime()
   }
 
-   verifyPassword = (password) => this.password === password
+  verifyPassword = (password) => this.password === password
 
   static add = (user) => {
     this.#list.push(user)
@@ -38,20 +38,19 @@ class User {
     }
   }
 
-  static updateById = (id,data) => {
+  static updateById = (id, data) => {
     const user = this.getById(id)
 
-    if(user) {
+    if (user) {
       this.update(user, data)
-      return true;
-    }
-    else{
+      return true
+    } else {
       return false
     }
   }
 
-  static update = (user,{email}) => {
-    if(email){
+  static update = (user, { email }) => {
+    if (email) {
       user.email = email
     }
   }
@@ -107,7 +106,7 @@ router.get('/user-delete', function (req, res) {
 
   User.deleteById(Number(id))
 
-   res.render('success-info', {
+  res.render('success-info', {
     style: 'success-info',
     info: 'Користувач видалений',
   })
@@ -122,21 +121,22 @@ router.post('/user-update', function (req, res) {
 
   let result = false
 
-  const user = User.getById(Number(id))  
+  const user = User.getById(Number(id))
 
-  if(user.verifyPassword(password)){
-    User.update(user, {email})
+  if (user.verifyPassword(password)) {
+    User.update(user, { email })
     result = true
-  } 
+  }
 
-   res.render('success-info', {
+  res.render('success-info', {
     style: 'success-info',
-    info: result ? 'Емайл пошта оновлена' : 'Сталася помилка',
+    info: result
+      ? 'Емайл пошта оновлена'
+      : 'Сталася помилка',
   })
 })
 
 // ================================================================
-
 
 // Підключаємо роутер до бек-енду
 module.exports = router
