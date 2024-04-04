@@ -4,8 +4,7 @@
   display: flex;
   flex-direction: column;
   padding: s.space(4);
-  /*gap: s.space(8);*/
-  gap: 32px;
+  gap: s.space(8);
 
   &__title {
     font-size: 20px;
@@ -16,15 +15,13 @@
 
   &__content {
     display: grid;
-    /*gap: s.space(6);*/
-    gap: 24px;
+    gap: s.space(6);
   }
 
   &__field {
     display: flex;
     flex-direction: column;
-    /*gap: s.space(2);*/
-    gap: 8px;
+    gap: s.space(2);
   }
 
   &__label {
@@ -43,14 +40,14 @@
   }
 }
 
-main{
+main {
   display: flex;
   flex-direction: column;
-  gap:s.space(10);
+  gap: s.space(10);
 }
 
-.user-list{
-  li{
+.user-list {
+  li {
     padding-right: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
