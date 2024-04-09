@@ -1,0 +1,97 @@
+@use '../../lib/service.scss' as s;
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+    color: s.color('primary');
+    padding-bottom: s.space(8);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: s.space(8);
+    gap: s.space(8);
+    border: 1px solid s.color('light');
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px 0px rgb(177, 172, 172);
+
+
+    &__title {
+        font-size: 20px;
+        font-weight: bold;
+
+    }
+
+    &__content {
+        display: grid;
+        //grid-template-rows: 1fr 2fr 1fr;
+        gap: s.space(6);
+    }
+
+    //   &__product{
+    //     display: flex;       
+    //     justify-content: stretch;
+    //     //align-items: start;
+    //     gap: s.space(5);
+    //     //width: 100%;
+    //   }
+
+    &__product {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        gap: 20px;
+
+    }
+
+    &__edit {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        gap: s.space(2);
+    }
+
+    &__label {
+        font-size: 16px;
+    }
+
+    &__input {
+        border: 1px solid s.color('light');
+        padding: s.space(2);
+    }
+
+    &__text {
+        font-size: 12px;
+    }
+
+    &__button {
+        border: 1px solid s.color('light');
+        padding: s.space(2);
+        background-color: s.color('primary');
+    }
+
+    &__button-edit {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: s.space(8);
+
+        //width: 100%
+    }
+
+    &__button-delete {
+        background-color: red;
+    }
+}
+
+section {
+    padding: s.space(20);
+}
+
+.button__text {
+    color: white;
+    font-size: 16px;
+}

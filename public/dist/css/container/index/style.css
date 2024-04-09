@@ -1,0 +1,71 @@
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2352f9;
+  padding-bottom: 32px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  gap: 32px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px 0px rgb(177, 172, 172);
+}
+.form__title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.form__content {
+  display: grid;
+  gap: 24px;
+}
+.form__product {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 20px;
+}
+.form__edit {
+  grid-template-columns: repeat(3, 1fr);
+}
+.form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.form__label {
+  font-size: 16px;
+}
+.form__input {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.form__text {
+  font-size: 12px;
+}
+.form__button {
+  border: 1px solid #ddd;
+  padding: 8px;
+  background-color: #2352f9;
+}
+.form__button-edit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.form__button-delete {
+  background-color: red;
+}
+
+section {
+  padding: 80px;
+}
+
+.button__text {
+  color: white;
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=style.css.map */
