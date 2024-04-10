@@ -1,8 +1,0 @@
-{{#with data}}
-
-<div class="card">
-    <title class="card__title">{{name}}</title>
-</div>
-
-
-{{/with}}

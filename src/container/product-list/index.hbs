@@ -7,19 +7,20 @@
   <section>
     <h1 class="title">Список товарів</h1>
     <div class="cards">
-      {{#with data.products}}
+      {{!>product-card}}
+      {{#with data}}
       {{#if isEmpty}}
       <mark>Пустий</mark>
       {{else}}
       {{#each list}}
-      {{!>product-card data}}
+
       <div class="product">
         <h2 class="product__name">{{name}}</h2>
         <p class="product__description">{{description}}</p>
-        <p class="product__id">{{id}}</p>
+        <p class="product__id">id:{{id}}</p>
         <div class="card__footer">
-          <div class="product__price">{{price}}</div>
-          <div><a href="#" class="product__edit"><span>Редагувати</span></a></div>
+          <div class="product__price">{{price}}$</div>
+          <div><a href="/product-edit?id={{id}}" class="product__edit"><span>Редагувати</span></a></div>
         </div>
       </div>
       {{/each}}
