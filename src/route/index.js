@@ -31,22 +31,16 @@ class Product {
   static getById = (id) =>
     this.#list.find((product) => product.id === id)
 
-  static updateById = (id, data) => {
+  static updateById = (id, { name, price, description }) => {
     const product = this.getById(id)
 
     if (product) {
-      this.update(product, data)
-      return true
-    } else {
-      return false
-    }
-  }
-
-  static update = (product, { name, price, description }) => {
-    if (name, price, description) {
       product.name = name
       product.price = price
       product.description = description
+      return true
+    } else {
+      return false
     }
   }
 
@@ -59,6 +53,8 @@ class Product {
       return false
     }
   }
+
+
 
 }
 
@@ -151,17 +147,18 @@ router.get('/product-list', function (req, res) {
 
 // ↙️ тут вводимо шлях (PATH) до сторінки
 router.get('/product-edit', function (req, res) {
- const { id } = req.query
-
- 
+  const { id } = req.query
 
   const product = Product.getById(Number(id))
- 
-    Product.update(product, { name, price, description })
- 
-   res.render('product-edit', {
+  console.log(product)
+
+
+  res.render('product-edit', {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
     style: 'index',
+    data: {
+      product,
+    }
   })
   // ↑↑ сюди вводимо JSON дані
 })
@@ -169,17 +166,17 @@ router.get('/product-edit', function (req, res) {
 // ================================================================
 router.post('/product-edit', function (req, res) {
 
-  const { name, price, description } = req.body
-
-    const product = Product.getById(Number(id))
+  const { name, price, description, id } = req.body
+  let result = false
+  const product = Product.getById(Number(id))
   if (product) {
-    Product.update(product, { name, price, description })
+    Product.updateById(id, { name, price, description })
     result = true
   }
 
   res.render('alert', {
     style: 'alert',
-    info: 'Товар з таким ID не знайдено'
+    info: result ? 'Данні оновлено' : 'Товар з таким ID не знайдено'
   })
 })
 // ================================================================
