@@ -38,9 +38,7 @@ class Product {
       product.name = name
       product.price = price
       product.description = description
-      return true
-    } else {
-      return false
+
     }
   }
 
@@ -169,8 +167,10 @@ router.post('/product-edit', function (req, res) {
   const { name, price, description, id } = req.body
   let result = false
   const product = Product.getById(Number(id))
+
+  console.log('Product:' + product)
   if (product) {
-    Product.updateById(id, { name, price, description })
+    Product.updateById(Number(id), { name, price, description })
     result = true
   }
 
