@@ -153,13 +153,12 @@ router.get('/product-list', function (req, res) {
 router.get('/product-edit', function (req, res) {
  const { id } = req.query
 
- let result = false
+ 
 
   const product = Product.getById(Number(id))
-  if (product) {
+ 
     Product.update(product, { name, price, description })
-    result = true
-  }
+ 
    res.render('product-edit', {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
     style: 'index',
@@ -168,23 +167,21 @@ router.get('/product-edit', function (req, res) {
 })
 
 // ================================================================
-// router.post('/product-edit', function (req, res) {
+router.post('/product-edit', function (req, res) {
 
-//   const { name, price, description } = req.body
+  const { name, price, description } = req.body
 
-//   let result = false
+    const product = Product.getById(Number(id))
+  if (product) {
+    Product.update(product, { name, price, description })
+    result = true
+  }
 
-//   const product = Product.getById(Number(id))
-//   if (product) {
-//     Product.update(product, { name, price, description })
-//     result = true
-//   }
-
-//   res.render('alert', {
-//     style: 'alert',
-//     info: 'Товар з таким ID не знайдено'
-//   })
-// })
+  res.render('alert', {
+    style: 'alert',
+    info: 'Товар з таким ID не знайдено'
+  })
+})
 // ================================================================
 // router.get Створює нам один ентпоїнт
 
