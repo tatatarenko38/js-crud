@@ -1,0 +1,18 @@
+@use '../../lib/service.scss' as s;
+
+
+.form {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: s.space(5);
+}
+
+.form-title {
+    font-size: 14px;
+    color: #808080;
+
+}
+
+.form-value {
+    font-size: 14px;
+}

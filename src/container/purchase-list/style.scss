@@ -1,0 +1,42 @@
+ @use '../../lib/service.scss' as s;
+
+ @use'../../component/heading/style.scss' as heading;
+ @use'../../component/divider/style.scss' as divider;
+
+ .main {
+     display: flex;
+     flex-direction: column;
+     gap: s.space(10);
+     padding: s.space(10);
+ }
+
+ .purchase-list {
+     width: 100%;
+     display: grid;
+     grid-template-columns: 2fr 4fr 3fr 3fr;
+     gap: s.space(5);
+ }
+
+ .purchase-item {
+     display: grid;
+     grid-template-rows: 1fr 1fr;
+     gap: s.space(5);
+
+ }
+
+ .purchase-id {
+     display: flex;
+     align-items: center;
+ }
+
+ .purchase-title {
+     color: #808080;
+ }
+
+ .purchase-value {
+     font-weight: bold;
+ }
+
+ .purchase-list__id {
+     text-decoration: none;
+ }
