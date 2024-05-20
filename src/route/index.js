@@ -256,7 +256,6 @@ Promocode.add('SALE25', 0.75)
 //   // ↑↑ сюди вводимо JSON дані
 // })
 
-
 // ================================================================
 router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
@@ -542,7 +541,7 @@ router.get('/purchase-info', function (req, res) {
 router.get('/purchase-update', function (req, res) {
   // res.render генерує нам HTML сторінку
   const id = Number(req.query.id)
-  const purchase = Purchase.updateById(id)
+  const purchase = Purchase.getById(id)
   // ↙️ cюди вводимо назву файлу з сontainer
   res.render('purchase-update', {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
@@ -557,14 +556,17 @@ router.get('/purchase-update', function (req, res) {
 // ================================================================
 router.post('/purchase-update', function (req, res) {
   // res.render генерує нам HTML сторінку
-  const id = Number(req.query.id)
-  const purchase = Purchase.updateById(id)
+  const id = Number(req.body.id)
+  let { lastname, firstname, email, phone } = req.body
+  const purchase = Purchase.updateById(id, { lastname, firstname, email, phone })
   // ↙️ cюди вводимо назву файлу з сontainer
-  res.render('purchase-update', {
+  res.render('alert', {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
-    style: 'purchase-update',
+    style: 'alert',
     data: {
-      purchase,
+      message: 'Успішно',
+      info: 'Замовлення створено',
+      link: `/purchase-list`,
     },
   })
   // ↑↑ сюди вводимо JSON дані
