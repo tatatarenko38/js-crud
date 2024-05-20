@@ -256,27 +256,6 @@ Promocode.add('SALE25', 0.75)
 //   // ↑↑ сюди вводимо JSON дані
 // })
 
-// ================================================================
-// ↙️ тут вводимо шлях (PATH) до сторінки
-router.get('/', function (req, res) {
-  // res.render генерує нам HTML сторінку
-  // ↙️ cюди вводимо назву файлу з сontainer
-  // res.render('purchase-index', {
-  //   // вказуємо назву папки контейнера, в якій знаходяться наші стилі
-  //   style: 'purchase-index',
-  //   data: {
-  //     img: 'https://picsum.photos/200/300',
-  //     title: `Комп'ютер Artline Gaming (X43v31) AMD Ryzen 5 3600/`,
-  //     description: `AMD Ryzen 5 3600 (3.6 - 4.2 ГГц) / RAM 16 ГБ / HDD 1 ТБ + SSD 480 ГБ`,
-  //     category: [
-  //       { id: 1, text: 'Готовий до відправки' },
-  //       { id: 2, text: 'Топ продажів' },
-  //     ],
-  //     price: 27000,
-  //   },
-  // })
-  // ↑↑ сюди вводимо JSON дані
-})
 
 // ================================================================
 router.get('/', function (req, res) {
@@ -526,30 +505,6 @@ router.post('/purchase-submit', function (req, res) {
 })
 // ================================================================
 
-// router.get('/purchase-list', function (req, res) {
-//   // res.render генерує нам HTML сторінку
-//   const id = Number(req.query.id)
-//   const purchase = Purchase.getById(id)
-
-//   if (!purchase) {
-//     console.log('Замовлення не знайдено')
-//   }
-//   console.log(req.query)
-//   // ↙️ cюди вводимо назву файлу з сontainer
-//   res.render('purchase-list', {
-//     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
-//     style: 'purchase-list',
-//     data: {
-//       id: purchase.id,
-//       title: purchase.title,
-//       totalPrice: purchase.totalPrice,
-//       bonus: purchase.bonus
-//     }
-//   })
-//   // ↑↑ сюди вводимо JSON дані
-// })
-// // ================================================================
-
 router.get('/purchase-list', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -584,6 +539,22 @@ router.get('/purchase-info', function (req, res) {
 })
 
 // ================================================================
+router.get('/purchase-update', function (req, res) {
+  // res.render генерує нам HTML сторінку
+  const id = Number(req.query.id)
+  const purchase = Purchase.updateById(id)
+  // ↙️ cюди вводимо назву файлу з сontainer
+  res.render('purchase-update', {
+    // вказуємо назву папки контейнера, в якій знаходяться наші стилі
+    style: 'purchase-update',
+    data: {
+      purchase,
+    },
+  })
+  // ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
 router.post('/purchase-update', function (req, res) {
   // res.render генерує нам HTML сторінку
   const id = Number(req.query.id)
@@ -593,7 +564,7 @@ router.post('/purchase-update', function (req, res) {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
     style: 'purchase-update',
     data: {
-      list: purchase,
+      purchase,
     },
   })
   // ↑↑ сюди вводимо JSON дані
