@@ -565,7 +565,7 @@ router.post('/purchase-update', function (req, res) {
     style: 'alert',
     data: {
       message: 'Успішно',
-      info: 'Замовлення створено',
+      info: 'Данні оновлено',
       link: `/purchase-list`,
     },
   })

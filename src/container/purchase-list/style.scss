@@ -3,6 +3,8 @@
  @use'../../component/heading/style.scss' as heading;
  @use'../../component/divider/style.scss' as divider;
 
+ @use'../../component/form/style.scss' as form;
+
  .main {
      display: flex;
      flex-direction: column;

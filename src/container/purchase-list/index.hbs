@@ -14,7 +14,7 @@
       <h2 class="purchase-title"><a href="/purchase-info?id={{id}}" class="purchase-list__id">ID: {{id}}</a> </h2>
     </div>
 
-    <div class="purchase-item">
+    {{!-- <div class="purchase-item">
       <h2 class="purchase-title">Товари</h2>
       <span class="purchase-value">{{product.title}}</span>
     </div>
@@ -27,7 +27,13 @@
     <div class="purchase-item">
       <h2 class="purchase-title">Нараховані бонуси</h2>
       <span class="purchase-value">{{bonus}}</span>
-    </div>
+    </div> --}}
+
+    {{>form title="Товари" value=product.title}}
+    {{>form title="Сума замовлення:" value=totalPrice}}
+    {{>form title="Нараховані бонуси:" value=bonus}}
+
+
 
   </div>
 
