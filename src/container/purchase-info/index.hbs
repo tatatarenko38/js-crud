@@ -5,7 +5,7 @@
 
 <main class="main">
   {{#with data.purchase}}
-  <form class="form-card">
+  <div class="form-card">
     {{>heading title="Інформація про замовлення"}}
 
 
@@ -41,8 +41,8 @@
     {{>divider}}
 
     <a href="/purchase-update?id={{id}}">{{>button text="Змінити дані"}}</a>
-  </form>
-  {{/with}}
+    </form>
+    {{/with}}
 </main>
 
 {{!
