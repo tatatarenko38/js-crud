@@ -1,0 +1,58 @@
+ @use '../../lib/service.scss' as s;
+
+ @use'../../component/button/style.scss' as button;
+
+ .card {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     padding: 32px;
+     gap: 32px;
+     border: 1px solid #ddd;
+     border-radius: 20px;
+     box-shadow: 5px 5px 10px 0px rgb(177, 172, 172);
+ }
+
+ .card__header {
+     display: flex;
+     flex-direction: column;
+     gap: 16px;
+ }
+
+ .card__title {
+     font-size: 20px;
+     font-weight: bold;
+
+ }
+
+ .card__subtitle {
+     font-size: 16px;
+     color: gray;
+ }
+
+ section {
+     padding: 80px;
+     padding-left: 160px;
+     padding-right: 160px;
+ }
+
+ .card__button {
+
+     border: 1px solid #ddd;
+     padding: 8px;
+     padding-left: 40px;
+     padding-right: 40px;
+     border-radius: 5px;
+     text-decoration: none;
+     align-content: center;
+ }
+
+ .card__button--blue {
+     background-color: #2352f9;
+ }
+
+ .button--text {
+     color: white;
+     font-size: 16px;
+
+ }

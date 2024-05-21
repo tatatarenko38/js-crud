@@ -1,0 +1,16 @@
+.form {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-title {
+  font-size: 14px;
+  color: #808080;
+}
+
+.form-value {
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=style.css.map */
