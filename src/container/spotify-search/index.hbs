@@ -10,14 +10,14 @@
 
     <form method="POST" action="/spotify-search" class="search">
       <img src="svg/spotify-search.svg">
-      <input type="search" class="search__input" placeholder="Введіть запит" name="value">
+      <input type="search" class="search__input" placeholder="Введіть запит" name="value" value="{{value}}">
       <button class="search__button">Пошук</button>
     </form>
 
     <ul class="playlist__list">
       {{#each list}}
       <li class="playlist">
-        <img src="{{image}}" alt="{{name}}">
+        <img src="{{image}}" alt="{{name}}" height="100px">
         <div class="playlist__content">
           <strong class="playlist__name">{{name}}</strong>
           <span class="playlist__amount">Кількість пісень: {{amount}}</span>

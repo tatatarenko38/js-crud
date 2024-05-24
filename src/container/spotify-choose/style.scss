@@ -19,3 +19,8 @@
      flex-direction: column;
      justify-content: space-between;
  }
+
+ .choose__item-row {
+     display: flex;
+     gap: s.space(10);
+ }
