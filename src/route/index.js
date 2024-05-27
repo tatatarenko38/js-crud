@@ -115,8 +115,8 @@ class Playlist {
   }
 
   addTrack(track) {
-    this.tracks.push(track).reverse()
-    return track
+    this.tracks.push(track)
+    return this.tracks.reverse()
   }
 
   //пошук плейліста по name
@@ -138,12 +138,15 @@ Playlist.makeMix(Playlist.create('T'))
 
 //=========================================
 router.get('/', function (req, res) {
+  const list = Playlist.getList()
 
   res.render('spotify-playlist-list', {
     style: 'spotify-playlist-list',
     data: {
 
-      list: Playlist.getList(),
+      list: list.map(({ tracks, ...rest }) => ({ ...rest, amount: tracks.length, })),
+
+
     },
   })
 })

@@ -3,33 +3,37 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
 }}
 
-<main class="main">
-  {{#mith data}}
-  <div class="main__content">
+<main class="main__list">
+  {{#with data}}
+  <div class="main__content list__content">
     <div class="header">
-      <h1 class="title">Моя бібіліотека</h1>
+      <h1 class="title__list">Моя бібіліотека</h1>
 
       <div class="nuv">
         <a href="/spotify-search">
           <img src="svg/spotify-search.svg">
         </a>
         <a href="/spotify-choose">
-          <img src="/svg/spotify_butto-big.svg">
+          <img src="/svg/add_button-big.svg">
         </a>
       </div>
     </div>
-    <h1 class="title">Моя бібіліотека</h1>
 
 
-    {{#each list}}
+
+
     <div class="playlist__list">
-      <img src="{{image}}" alt="{{name}}" height="100px">
-      <div class="playlist__list-content">
-        <strong class="playlist__name">{{name}}</strong>
-        <span class="playlist__amount">Кількість пісень: {{amount}}</span>
+      {{#each list}}
+      <div>
+        <img src="{{image}}" alt="{{name}}" height="345px">
+        <div class="playlist__list-content">
+          <strong class="playlist__name">{{name}}</strong>
+          <span class="playlist__amount">{{amount}} пісень</span>
+        </div>
       </div>
+      {{/each}}
     </div>
-    {{/each}}
+
 
 
   </div>

@@ -9,7 +9,7 @@
     <h1 class="title title--center">Додати до плейлиста</h1>
     {{#each tracks}}
     <form method="POST" action="/spotify-track-add" class="form">
-      <input type="hidden" name="playlistId" value="{{../playlistId}}">
+      <input type="hidden" name="playlistId" value="{{playlistId}}">
       <input type="hidden" name="trackId" value="{{id}}">
       <ul class="track-list">
         <li class="track">

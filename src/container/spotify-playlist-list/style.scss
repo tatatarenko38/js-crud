@@ -2,27 +2,77 @@
 
  @use'../../lib/spotify.scss' as spotify;
 
- .search {
-     background-color: #292929;
-     padding: s.space(2) s.space(8);
-     border-radius: 8px;
+ //  .search {
+ //      background-color: #292929;
+ //      padding: s.space(2) s.space(8);
+ //      border-radius: 8px;
 
-     display: grid;
+ //      display: grid;
 
-     grid-template-columns: 56px 1fr auto;
+ //      grid-template-columns: 56px 1fr auto;
 
+ //      gap: s.space(8);
+
+ //      color: s.color(light);
+ //      font-size: 24px;
+
+ //      &__button {
+ //          color: s.color(light);
+
+ //          transition: opacity 0.6s;
+
+ //          &:hover {
+ //              opacity: 0.6;
+ //          }
+ //      }
+ //  }
+
+ .header {
+     display: flex;
+     justify-content: space-between;
+ }
+
+ .nuv {
+     display: flex;
      gap: s.space(8);
+     color: white;
+ }
 
+ .playlist__list {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: s.space(8);
+ }
+
+ .title__list {
+     font-size: 40px;
      color: s.color(light);
+ }
+
+ .playlist__list-content {
+     display: grid;
+     gap: s.space(5);
+     margin-top: s.space(5);
+ }
+
+ .playlist__name {
      font-size: 24px;
+     color: s.color(light);
+ }
 
-     &__button {
-         color: s.color(light);
+ .playlist__amount {
+     font-size: 16px;
+     color: s.color(gray);
+ }
 
-         transition: opacity 0.6s;
+ .list__content {
+     max-width: fit-content;
+     max-height: fit-content;
+ }
 
-         &:hover {
-             opacity: 0.6;
-         }
-     }
+ .main__list {
+     display: flex;
+     justify-content: center;
+     padding: s.space(6) s.space(2);
+     background-color: s.color(dark);
  }
