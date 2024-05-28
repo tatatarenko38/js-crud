@@ -82,4 +82,9 @@ a:hover {
   color: #BDBDBD;
 }
 
+.main__dark {
+  background-color: #121212;
+  height: fit-content;
+}
+
 /*# sourceMappingURL=spotify.css.map */

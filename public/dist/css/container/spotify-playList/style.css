@@ -82,6 +82,11 @@ a:hover {
   color: #BDBDBD;
 }
 
+.main__dark {
+  background-color: #121212;
+  height: fit-content;
+}
+
 .add-button {
   display: grid;
   grid-template-columns: 92px 1fr;
